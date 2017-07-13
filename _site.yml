@@ -1,0 +1,37 @@
+name: "SFXN1_Bladder"
+output_dir: "."
+
+output:
+  html_document:
+    theme: cosmo
+    css: style.css
+
+navbar:
+  title: "SFXN1 in bladder cancer"
+  left:
+    - text: "Descriptive analysis"
+      menu:
+        - text: "Clinicopathologic features"
+          href: descriptive_cpo.html
+        - text: "Marker expression features"
+          href: descriptive_marker.html
+    - text: "Association analysis"
+      menu:
+        - text: "By median extent"
+          href: association_ext_med.html
+        - text: "By maximum extent"
+          href: association_ext_max.html
+        - text: "By median intensity"
+          href: association_int_med.html
+        - text: "By maximum intensity"
+          href: association_ext_max.html
+        - text: "By median H-score"
+          href: association_h_med.html
+        - text: "By maximum H-score"
+          href: association_h_max.html
+    - text: "Outcome analysis"
+      menu:
+        - text: "Regression analysis"
+          href: outcome_regression.html
+        - text: "Survival curves"
+          href: outcome_survival.html

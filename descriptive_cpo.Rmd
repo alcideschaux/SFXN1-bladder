@@ -1,0 +1,270 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+```
+
+\   
+
+# Clinicopathologic and outcome features {.tabset .tabset-pills .tabset-fade}
+## TMA 674 {.tabset .tabset-pills .tabset-fade}
+### Clinical features {.tabset .tabset-pills .tabset-fade}
+#### Age
+```{r age.DF_674}
+x <- DF_674$age
+g_nice(x, max_break = 90)
+tbl_nice(x)
+```
+
+#### Sex
+```{r sex.DF_674}
+x <- DF_674$sex
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Race
+```{r race.DF_674}
+x <- DF_674$race
+g_nice(x)
+tbl_nice(x)
+```
+
+### Pathologic features {.tabset .tabset-pills .tabset-fade}
+#### Diagnosis
+```{r dx_spot.DF_674}
+x <- DF_674$dx_spot
+g_nice(x)
+tbl_nice(x)
+```
+
+#### pT stage
+```{r stage_pt.DF_674}
+x <- DF_674$stage_pt
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Clinical stage
+```{r stage_clinical.DF_674}
+x <- DF_674$stage_clinical
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Histologic grade
+```{r grade.DF_674}
+x <- DF_674$grade
+g_nice(x)
+tbl_nice(x)
+```
+
+#### CIS
+```{r CIS.DF_674}
+x <- DF_674$CIS
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Lymphovascular invasion
+```{r lvi.DF_674}
+x <- DF_674$lvi
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Lymph node metastasis
+```{r metastasis_lymph.DF_674}
+x <- DF_674$metastasis_lymph
+g_nice(x)
+tbl_nice(x)
+```
+
+### Preoperative features {.tabset .tabset-pills .tabset-fade}
+#### Preop CIS
+```{r preop_cis.DF_674}
+x <- DF_674$preop_cis
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Preop procedure
+```{r preop_procedure.DF_674}
+x <- DF_674$preop_procedure
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Preop stage
+```{r preop_stage.DF_674}
+x <- DF_674$preop_stage
+g_nice(x)
+tbl_nice(x)
+```
+
+### Treatment features {.tabset .tabset-pills .tabset-fade}
+#### Preop RTx
+```{r preop_rtx.DF_674}
+x <- DF_674$preop_rtx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Preop CTx
+```{r preop_ctx.DF_674}
+x <- DF_674$preop_ctx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Intravesical CTx
+```{r intravesical_ctx.DF_674}
+x <- DF_674$intravesical_ctx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Intravesical CTx type
+```{r intravesical_ctx_type.DF_674}
+x <- DF_674$intravesical_ctx_type
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Postop RTx
+```{r postop_rtx.DF_674}
+x <- DF_674$postop_rtx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Postop CTx
+```{r postop_ctx}
+x <- DF_674$postop_ctx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Postop CTx type
+```{r postop_ctx_type.DF_674}
+x <- DF_674$postop_ctx_type
+g_nice(x)
+tbl_nice(x)
+```
+
+### Outcome features {.tabset .tabset-pills .tabset-fade}
+#### Follow-up, in months
+```{r fu_months.DF_674}
+x <- DF_674$fu_months
+g_nice(x, bin = 24)
+tbl_nice(x)
+```
+
+#### Tumor progression
+```{r progression.DF_674}
+x <- DF_674$progression
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Visceral metastasis
+```{r metastasis_visceral.DF_674}
+x <- DF_674$metastasis_visceral
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Overall mortality
+```{r dead.DF_674}
+x <- DF_674$dead
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Cancer-related mortality
+```{r dod.DF_674}
+x <- DF_674$dod
+g_nice(x)
+tbl_nice(x)
+```
+
+
+## TMA 931 {.tabset .tabset-pills .tabset-fade}
+### Clinical features {.tabset .tabset-pills .tabset-fade}
+#### Age
+```{r age.DF_931}
+x <- DF_931$age
+g_nice(x, max_break = 90)
+tbl_nice(x)
+```
+
+#### Sex
+```{r sex.DF_931}
+x <- DF_931$sex
+g_nice(x)
+tbl_nice(x)
+```
+
+### Pathologic features {.tabset .tabset-pills .tabset-fade}
+#### Diagnosis
+```{r dx_spot.DF_931}
+x <- DF_931$dx_spot
+g_nice(x)
+tbl_nice(x)
+```
+
+#### pT stage
+```{r stage_pt.DF_931}
+x <- DF_931$stage_pt
+g_nice(x)
+tbl_nice(x)
+```
+
+```{r grade.DF_931}
+#### Histologic grade
+# x <- DF_674$grade
+# g_nice(x)
+# tbl_nice(x)
+```
+
+### Treatment features {.tabset .tabset-pills .tabset-fade}
+#### Intravesical CTx
+```{r intravesical_ctx.DF_931}
+x <- DF_931$intravesical_ctx
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Intravesical CTx type
+```{r intravesical_ctx_type.DF_931}
+x <- DF_931$intravesical_ctx_type
+g_nice(x)
+tbl_nice(x)
+```
+
+### Outcome features {.tabset .tabset-pills .tabset-fade}
+#### Follow-up, in months
+```{r fu_months.DF_931}
+x <- DF_931$fu_months
+g_nice(x, bin = 24)
+tbl_nice(x)
+```
+
+#### Tumor recurrence
+```{r recurrence.DF_931}
+x <- DF_931$recurrence
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Tumor progression
+```{r progression.DF_931}
+x <- DF_931$progression
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Overall mortality
+```{r dead.DF_931}
+x <- DF_931$dead
+g_nice(x)
+tbl_nice(x)
+```

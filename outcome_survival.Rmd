@@ -1,0 +1,162 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+```
+
+\   
+
+# Survival curves {.tabset .tabset-pills .tabset-fade}
+## TMA 674 {.tabset .tabset-pills .tabset-fade}
+```{r DF_674}
+DF <- DF_674 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+FU <- DF$fu_months
+```
+
+### Tumor progression {.tabset .tabset-pills .tabset-fade}
+```{r progression.DF_674}
+outcome <- DF$progression
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.progression.DF_674}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.progression.DF_674}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.progression.DF_674}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```
+
+### Overall mortality {.tabset .tabset-pills .tabset-fade}
+```{r dead.DF_674}
+outcome <- DF$dead
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.dead.DF_674}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.dead.DF_674}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.dead.DF_674}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```
+
+### Cancer-related mortality {.tabset .tabset-pills .tabset-fade}
+```{r dod.DF_674}
+outcome <- DF$dod
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.dod.DF_674}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.dod.DF_674}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.dod.DF_674}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```
+
+## TMA 931 {.tabset .tabset-pills .tabset-fade}
+```{r DF_931}
+DF <- DF_931 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+FU <- DF$fu_months
+```
+
+### Tumor recurrence {.tabset .tabset-pills .tabset-fade}
+```{r recurrence.DF_931}
+outcome <- DF$recurrence
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.recurrence.DF_931}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.recurrence.DF_931}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.recurrence.DF_931}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```
+
+### Tumor progression {.tabset .tabset-pills .tabset-fade}
+```{r progression.DF_931}
+outcome <- DF$progression
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.progression.DF_931}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.progression.DF_931}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.progression.DF_931}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```
+
+### Overall mortality {.tabset .tabset-pills .tabset-fade}
+```{r dead.DF_931}
+outcome <- DF$dead
+```
+
+#### By extent
+```{r SFXN1_ext_level_med.dead.DF_931}
+status <- DF$SFXN1_ext_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By intensity
+```{r SFXN1_int_level_med.dead.DF_931}
+status <- DF$SFXN1_int_level_med
+g_surv(FU, outcome, status)
+```
+
+#### By H-score
+```{r SFXN1_h_level_med.dead.DF_931}
+status <- DF$SFXN1_h_level_med
+g_surv(FU, outcome, status)
+```

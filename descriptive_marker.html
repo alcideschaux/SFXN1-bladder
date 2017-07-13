@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SFXN1 in bladder cancer</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Descriptive analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="descriptive_cpo.html">Clinicopathologic features</a>
+    </li>
+    <li>
+      <a href="descriptive_marker.html">Marker expression features</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Association analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="association_ext_med.html">By median extent</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum extent</a>
+    </li>
+    <li>
+      <a href="association_int_med.html">By median intensity</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum intensity</a>
+    </li>
+    <li>
+      <a href="association_h_med.html">By median H-score</a>
+    </li>
+    <li>
+      <a href="association_h_max.html">By maximum H-score</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Outcome analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="outcome_regression.html">Regression analysis</a>
+    </li>
+    <li>
+      <a href="outcome_survival.html">Survival curves</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p> </p>
+<div id="marker-features" class="section level1 tabset tabset-pills tabset-fade">
+<h1>Marker features</h1>
+<div id="tma-674" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 674</h2>
+<div id="by-tma-spots" class="section level3 tabset tabset-pills tabset-fade">
+<h3>By TMA spots</h3>
+<div id="marker-extent" class="section level4">
+<h4>Marker extent</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_extent.SFXN1_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_extent.SFXN1_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">86.4</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">16.3</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">90</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity" class="section level4">
+<h4>Marker intensity</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_intensity.SFXN1_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">9 (6)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">80 (57)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center">51 (36)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score" class="section level4">
+<h4>Marker H-score</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h.SFXN1_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h.SFXN1_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">203.8</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">74.4</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">180</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">117.5</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="by-sp-cases" class="section level3 tabset tabset-pills tabset-fade">
+<h3>By SP cases</h3>
+<div id="by-median-value" class="section level4 tabset tabset-pills tabset-fade">
+<h4>By median value</h4>
+<div id="marker-extent-1" class="section level5">
+<h5>Marker extent</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_ext_med.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_ext_med.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">82</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">15.5</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">90</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">30</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity-1" class="section level5">
+<h5>Marker intensity</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_int_med.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">2 (8)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">17 (68)</td>
+</tr>
+<tr class="odd">
+<td>2.5</td>
+<td align="center">1 (4)</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td align="center">5 (20)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score-1" class="section level5">
+<h5>Marker H-score</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h_med.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h_med.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">176.4</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">64.7</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">180</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">60</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">40</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="by-maximum-value" class="section level4 tabset tabset-pills tabset-fade">
+<h4>By maximum value</h4>
+<div id="marker-extent-2" class="section level5">
+<h5>Marker extent</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_ext_max.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_ext_max.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">90.4</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">16.2</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">100</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">30</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity-2" class="section level5">
+<h5>Marker intensity</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_int_max.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">1 (4)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">14 (56)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center">10 (40)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score-2" class="section level5">
+<h5>Marker H-score</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h_max.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h_max.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">215.6</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">70.4</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">200</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">120</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">60</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="tma-931" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 931</h2>
+<div id="by-tma-spots-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>By TMA spots</h3>
+<div id="marker-extent-3" class="section level4">
+<h4>Marker extent</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_extent.SFXN1_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_extent.SFXN1_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">43.5</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">28.3</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">40</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity-3" class="section level4">
+<h4>Marker intensity</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_intensity.SFXN1_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="center">30 (13)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td align="center">143 (62)</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td align="center">52 (23)</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td align="center">5 (2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score-3" class="section level4">
+<h4>Marker H-score</h4>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h.SFXN1_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h.SFXN1_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">60.1</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">52.4</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">60</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">60</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">270</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="by-sp-cases-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>By SP cases</h3>
+<div id="by-median-value-1" class="section level4 tabset tabset-pills tabset-fade">
+<h4>By median value</h4>
+<div id="marker-extent-4" class="section level5">
+<h5>Marker extent</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_ext_med.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_ext_med.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">44.6</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">25.7</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">45</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">90</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity-4" class="section level5">
+<h5>Marker intensity</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_int_med.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="center">3 (12)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td align="center">13 (52)</td>
+</tr>
+<tr class="odd">
+<td>1.5</td>
+<td align="center">3 (12)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">5 (20)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center">1 (4)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score-4" class="section level5">
+<h5>Marker H-score</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h_med.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h_med.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">71.8</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">61.5</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">60</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">70</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">270</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="by-maximum-value-1" class="section level4 tabset tabset-pills tabset-fade">
+<h4>By maximum value</h4>
+<div id="marker-extent-5" class="section level5">
+<h5>Marker extent</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_ext_max.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_ext_max.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">55.6</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">26.8</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">60</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">40</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">90</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-intensity-5" class="section level5">
+<h5>Marker intensity</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_int_max.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">12 (48)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center">9 (36)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center">4 (16)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marker-h-score-5" class="section level5">
+<h5>Marker H-score</h5>
+<p><img src="descriptive_marker_files/figure-html/SFXN1_h_max.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_marker_files/figure-html/SFXN1_h_max.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">93.2</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">75.5</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">70</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">120</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">270</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

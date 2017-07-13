@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SFXN1 in bladder cancer</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Descriptive analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="descriptive_cpo.html">Clinicopathologic features</a>
+    </li>
+    <li>
+      <a href="descriptive_marker.html">Marker expression features</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Association analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="association_ext_med.html">By median extent</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum extent</a>
+    </li>
+    <li>
+      <a href="association_int_med.html">By median intensity</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum intensity</a>
+    </li>
+    <li>
+      <a href="association_h_med.html">By median H-score</a>
+    </li>
+    <li>
+      <a href="association_h_max.html">By maximum H-score</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Outcome analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="outcome_regression.html">Regression analysis</a>
+    </li>
+    <li>
+      <a href="outcome_survival.html">Survival curves</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p> </p>
+<div id="clinicopathologic-and-outcome-features" class="section level1 tabset tabset-pills tabset-fade">
+<h1>Clinicopathologic and outcome features</h1>
+<div id="tma-674" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 674</h2>
+<div id="clinical-features" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Clinical features</h3>
+<div id="age" class="section level4">
+<h4>Age</h4>
+<p><img src="descriptive_cpo_files/figure-html/age.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_cpo_files/figure-html/age.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">64.6</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">12.2</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">67</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">35</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">89</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sex" class="section level4">
+<h4>Sex</h4>
+<p><img src="descriptive_cpo_files/figure-html/sex.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female</td>
+<td align="center">6 (24)</td>
+</tr>
+<tr class="even">
+<td>Male</td>
+<td align="center">19 (76)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="race" class="section level4">
+<h4>Race</h4>
+<p><img src="descriptive_cpo_files/figure-html/race.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>African-American</td>
+<td align="center">4 (16)</td>
+</tr>
+<tr class="even">
+<td>Caucasian</td>
+<td align="center">21 (84)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pathologic-features" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Pathologic features</h3>
+<div id="diagnosis" class="section level4">
+<h4>Diagnosis</h4>
+<p><img src="descriptive_cpo_files/figure-html/dx_spot.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nontumor</td>
+<td align="center">1 (4)</td>
+</tr>
+<tr class="even">
+<td>CIS</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="odd">
+<td>LG</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="even">
+<td>Invasive</td>
+<td align="center">24 (96)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="pt-stage" class="section level4">
+<h4>pT stage</h4>
+<p><img src="descriptive_cpo_files/figure-html/stage_pt.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>pTa/pTis</td>
+<td align="center">1 (4)</td>
+</tr>
+<tr class="even">
+<td>pT1</td>
+<td align="center">4 (16)</td>
+</tr>
+<tr class="odd">
+<td>pT2</td>
+<td align="center">8 (32)</td>
+</tr>
+<tr class="even">
+<td>pT3</td>
+<td align="center">9 (36)</td>
+</tr>
+<tr class="odd">
+<td>pT4</td>
+<td align="center">3 (12)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="clinical-stage" class="section level4">
+<h4>Clinical stage</h4>
+<p><img src="descriptive_cpo_files/figure-html/stage_clinical.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="center">1 (4)</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td align="center">4 (16)</td>
+</tr>
+<tr class="odd">
+<td>II</td>
+<td align="center">4 (16)</td>
+</tr>
+<tr class="even">
+<td>III</td>
+<td align="center">8 (32)</td>
+</tr>
+<tr class="odd">
+<td>IV</td>
+<td align="center">8 (32)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="histologic-grade" class="section level4">
+<h4>Histologic grade</h4>
+<p><img src="descriptive_cpo_files/figure-html/grade.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low grade</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="even">
+<td>High grade</td>
+<td align="center">25 (100)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cis" class="section level4">
+<h4>CIS</h4>
+<p><img src="descriptive_cpo_files/figure-html/CIS.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">14 (56)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">11 (44)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lymphovascular-invasion" class="section level4">
+<h4>Lymphovascular invasion</h4>
+<p><img src="descriptive_cpo_files/figure-html/lvi.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">18 (72)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">7 (28)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lymph-node-metastasis" class="section level4">
+<h4>Lymph node metastasis</h4>
+<p><img src="descriptive_cpo_files/figure-html/metastasis_lymph.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">16 (73)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">6 (27)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="preoperative-features" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Preoperative features</h3>
+<div id="preop-cis" class="section level4">
+<h4>Preop CIS</h4>
+<p><img src="descriptive_cpo_files/figure-html/preop_cis.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">13 (54)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">11 (46)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="preop-procedure" class="section level4">
+<h4>Preop procedure</h4>
+<p><img src="descriptive_cpo_files/figure-html/preop_procedure.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Biopsy</td>
+<td align="center">13 (54)</td>
+</tr>
+<tr class="even">
+<td>TURBT</td>
+<td align="center">11 (46)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="preop-stage" class="section level4">
+<h4>Preop stage</h4>
+<p><img src="descriptive_cpo_files/figure-html/preop_stage.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>pTa/pTis</td>
+<td align="center">3 (12)</td>
+</tr>
+<tr class="even">
+<td>pT1</td>
+<td align="center">2 (8)</td>
+</tr>
+<tr class="odd">
+<td>pT2</td>
+<td align="center">13 (54)</td>
+</tr>
+<tr class="even">
+<td>pT3</td>
+<td align="center">5 (21)</td>
+</tr>
+<tr class="odd">
+<td>pT4</td>
+<td align="center">1 (4)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="treatment-features" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Treatment features</h3>
+<div id="preop-rtx" class="section level4">
+<h4>Preop RTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/preop_rtx.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">24 (100)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">0 (0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="preop-ctx" class="section level4">
+<h4>Preop CTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/preop_ctx.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">23 (96)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">1 (4)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="intravesical-ctx" class="section level4">
+<h4>Intravesical CTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/intravesical_ctx.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">15 (65)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">8 (35)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="intravesical-ctx-type" class="section level4">
+<h4>Intravesical CTx type</h4>
+<p><img src="descriptive_cpo_files/figure-html/intravesical_ctx_type.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BCG</td>
+<td align="center">8 (100)</td>
+</tr>
+<tr class="even">
+<td>MMC</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="odd">
+<td>BCG+MMC</td>
+<td align="center">0 (0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="postop-rtx" class="section level4">
+<h4>Postop RTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/postop_rtx.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">22 (92)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">2 (8)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="postop-ctx" class="section level4">
+<h4>Postop CTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/postop_ctx-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">10 (42)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">14 (58)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="postop-ctx-type" class="section level4">
+<h4>Postop CTx type</h4>
+<p><img src="descriptive_cpo_files/figure-html/postop_ctx_type.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Adjuvant</td>
+<td align="center">12 (86)</td>
+</tr>
+<tr class="even">
+<td>Salvage</td>
+<td align="center">2 (14)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outcome-features" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Outcome features</h3>
+<div id="follow-up-in-months" class="section level4">
+<h4>Follow-up, in months</h4>
+<p><img src="descriptive_cpo_files/figure-html/fu_months.DF_674-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_cpo_files/figure-html/fu_months.DF_674-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">63.5</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">58</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">40</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">64</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">215</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tumor-progression" class="section level4">
+<h4>Tumor progression</h4>
+<p><img src="descriptive_cpo_files/figure-html/progression.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No tumor progression</td>
+<td align="center">7 (39)</td>
+</tr>
+<tr class="even">
+<td>Tumor progression</td>
+<td align="center">11 (61)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visceral-metastasis" class="section level4">
+<h4>Visceral metastasis</h4>
+<p><img src="descriptive_cpo_files/figure-html/metastasis_visceral.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">14 (67)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">7 (33)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="overall-mortality" class="section level4">
+<h4>Overall mortality</h4>
+<p><img src="descriptive_cpo_files/figure-html/dead.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ANOD+AWD</td>
+<td align="center">3 (12)</td>
+</tr>
+<tr class="even">
+<td>DOC+DOD</td>
+<td align="center">22 (88)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cancer-related-mortality" class="section level4">
+<h4>Cancer-related mortality</h4>
+<p><img src="descriptive_cpo_files/figure-html/dod.DF_674-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ANOD+AWD+DOC</td>
+<td align="center">7 (39)</td>
+</tr>
+<tr class="even">
+<td>DOD</td>
+<td align="center">11 (61)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tma-931" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 931</h2>
+<div id="clinical-features-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Clinical features</h3>
+<div id="age-1" class="section level4">
+<h4>Age</h4>
+<p><img src="descriptive_cpo_files/figure-html/age.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_cpo_files/figure-html/age.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">72.1</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">10.7</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">71.5</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">56</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">89</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sex-1" class="section level4">
+<h4>Sex</h4>
+<p><img src="descriptive_cpo_files/figure-html/sex.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female</td>
+<td align="center">5 (18)</td>
+</tr>
+<tr class="even">
+<td>Male</td>
+<td align="center">23 (82)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pathologic-features-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Pathologic features</h3>
+<div id="diagnosis-1" class="section level4">
+<h4>Diagnosis</h4>
+<p><img src="descriptive_cpo_files/figure-html/dx_spot.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nontumor</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="even">
+<td>CIS</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="odd">
+<td>LG</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="even">
+<td>Invasive</td>
+<td align="center">28 (100)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="pt-stage-1" class="section level4">
+<h4>pT stage</h4>
+<p><img src="descriptive_cpo_files/figure-html/stage_pt.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>pTa/pTis</td>
+<td align="center">3 (11)</td>
+</tr>
+<tr class="even">
+<td>pT1</td>
+<td align="center">22 (79)</td>
+</tr>
+<tr class="odd">
+<td>pT2</td>
+<td align="center">3 (11)</td>
+</tr>
+<tr class="even">
+<td>pT3</td>
+<td align="center">0 (0)</td>
+</tr>
+<tr class="odd">
+<td>pT4</td>
+<td align="center">0 (0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="treatment-features-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Treatment features</h3>
+<div id="intravesical-ctx-1" class="section level4">
+<h4>Intravesical CTx</h4>
+<p><img src="descriptive_cpo_files/figure-html/intravesical_ctx.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No</td>
+<td align="center">13 (46)</td>
+</tr>
+<tr class="even">
+<td>Yes</td>
+<td align="center">15 (54)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="intravesical-ctx-type-1" class="section level4">
+<h4>Intravesical CTx type</h4>
+<p><img src="descriptive_cpo_files/figure-html/intravesical_ctx_type.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BCG</td>
+<td align="center">8 (53)</td>
+</tr>
+<tr class="even">
+<td>MMC</td>
+<td align="center">1 (7)</td>
+</tr>
+<tr class="odd">
+<td>BCG+MMC</td>
+<td align="center">6 (40)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outcome-features-1" class="section level3 tabset tabset-pills tabset-fade">
+<h3>Outcome features</h3>
+<div id="follow-up-in-months-1" class="section level4">
+<h4>Follow-up, in months</h4>
+<p><img src="descriptive_cpo_files/figure-html/fu_months.DF_931-1.png" width="672" style="display: block; margin: auto;" /><img src="descriptive_cpo_files/figure-html/fu_months.DF_931-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td align="center">35.6</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td align="center">51.2</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="center">24</td>
+</tr>
+<tr class="even">
+<td>Interquartile range</td>
+<td align="center">39.8</td>
+</tr>
+<tr class="odd">
+<td>Mininum</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td align="center">275</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tumor-recurrence" class="section level4">
+<h4>Tumor recurrence</h4>
+<p><img src="descriptive_cpo_files/figure-html/recurrence.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No tumor recurrence</td>
+<td align="center">11 (39)</td>
+</tr>
+<tr class="even">
+<td>Tumor recurrence</td>
+<td align="center">17 (61)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tumor-progression-1" class="section level4">
+<h4>Tumor progression</h4>
+<p><img src="descriptive_cpo_files/figure-html/progression.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No tumor progression</td>
+<td align="center">23 (82)</td>
+</tr>
+<tr class="even">
+<td>Tumor progression</td>
+<td align="center">5 (18)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="overall-mortality-1" class="section level4">
+<h4>Overall mortality</h4>
+<p><img src="descriptive_cpo_files/figure-html/dead.DF_931-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption>Summary table</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">No. Cases (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ANOD+AWD</td>
+<td align="center">22 (79)</td>
+</tr>
+<tr class="even">
+<td>DOC+DOD</td>
+<td align="center">6 (21)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

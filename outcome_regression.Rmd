@@ -1,0 +1,76 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+```
+
+\   
+
+# Regression modelling {.tabset .tabset-pills .tabset-fade}
+## TMA 674 {.tabset .tabset-pills .tabset-fade}
+```{r DF_674}
+DF <- DF_674 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+FU <- DF$fu_months
+
+predictors <- with(DF, list(
+  "High SFXN1 extent (> median)" = SFXN1_ext_level_med,
+  "High SFXN1 intensity (> median)" = SFXN1_int_level_med,
+  "High SFXN1 H-score (> median)" = SFXN1_h_level_med
+))
+
+varlabels <- names(predictors)
+```
+
+### Tumor progression
+```{r progression.DF_674}
+outcome <- DF$progression
+tbl_logcox(outcome, FU, predictors, varlabels)
+```
+
+### Overall mortality
+```{r dead.DF_674}
+outcome <- DF$dead
+tbl_logcox(outcome, FU, predictors, varlabels)
+```
+
+### Cancer-related mortality
+```{r dod.DF_674}
+outcome <- DF$dod
+tbl_logcox(outcome, FU, predictors, varlabels)
+```
+
+## TMA 931 {.tabset .tabset-pills .tabset-fade}
+```{r DF_931}
+DF <- DF_931 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+FU <- DF$fu_months
+
+predictors <- with(DF, list(
+  "High SFXN1 extent (> median)" = SFXN1_ext_level_med,
+  "High SFXN1 intensity (> median)" = SFXN1_int_level_med,
+  "High SFXN1 H-score (> median)" = SFXN1_h_level_med
+))
+
+varlabels <- names(predictors)
+```
+
+### Tumor recurrence
+```{r recurrence.DF_931}
+outcome <- DF$recurrence
+tbl_logcox(outcome, FU, predictors, varlabels)
+```
+
+### Tumor progression
+```{r progression.DF_931}
+outcome <- DF$progression
+tbl_logcox(outcome, FU, predictors, varlabels)
+```
+
+### Overall mortality
+```{r dead.DF_931}
+outcome <- DF$dead
+tbl_logcox(outcome, FU, predictors, varlabels)
+```

@@ -1,0 +1,158 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+```
+
+\   
+
+# Marker features {.tabset .tabset-pills .tabset-fade}
+## TMA 674 {.tabset .tabset-pills .tabset-fade}
+```{r SFXN1_674}
+marker <- SFXN1_674
+```
+
+### By TMA spots {.tabset .tabset-pills .tabset-fade}
+#### Marker extent
+```{r SFXN1_extent.SFXN1_674}
+x <- marker$SFXN1_ext
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+#### Marker intensity
+```{r SFXN1_intensity.SFXN1_674}
+x <- factor(marker$SFXN1_int)
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Marker H-score
+```{r SFXN1_h.SFXN1_674}
+x <- marker$SFXN1_h
+g_nice(x, bin = 25)
+tbl_nice(x)
+```
+
+### By SP cases {.tabset .tabset-pills .tabset-fade}
+```{r DF_674}
+DF <- DF_674
+```
+
+#### By median value {.tabset .tabset-pills .tabset-fade}
+##### Marker extent
+```{r SFXN1_ext_med.DF_674}
+x <- DF$SFXN1_ext_med
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+##### Marker intensity
+```{r SFXN1_int_med.DF_674}
+x <- factor(DF$SFXN1_int_med)
+g_nice(x)
+tbl_nice(x)
+```
+
+##### Marker H-score
+```{r SFXN1_h_med.DF_674}
+x <- DF$SFXN1_h_med
+g_nice(x, bin = 25)
+tbl_nice(x)
+```
+
+#### By maximum value {.tabset .tabset-pills .tabset-fade}
+##### Marker extent
+```{r SFXN1_ext_max.DF_674}
+x <- DF$SFXN1_ext_max
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+##### Marker intensity
+```{r SFXN1_int_max.DF_674}
+x <- factor(DF$SFXN1_int_max)
+g_nice(x)
+tbl_nice(x)
+```
+
+##### Marker H-score
+```{r SFXN1_h_max.DF_674}
+x <- DF$SFXN1_h_max
+g_nice(x, bin = 25)
+tbl_nice(x)
+```
+
+## TMA 931 {.tabset .tabset-pills .tabset-fade}
+```{r SFXN1_931}
+marker <- SFXN1_931
+```
+
+### By TMA spots {.tabset .tabset-pills .tabset-fade}
+#### Marker extent
+```{r SFXN1_extent.SFXN1_931}
+x <- marker$SFXN1_ext
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+#### Marker intensity
+```{r SFXN1_intensity.SFXN1_931}
+x <- factor(marker$SFXN1_int)
+g_nice(x)
+tbl_nice(x)
+```
+
+#### Marker H-score
+```{r SFXN1_h.SFXN1_931}
+x <- marker$SFXN1_h
+g_nice(x, bin = 25)
+tbl_nice(x)
+```
+
+### By SP cases {.tabset .tabset-pills .tabset-fade}
+```{r DF_931}
+DF <- DF_931
+```
+
+#### By median value {.tabset .tabset-pills .tabset-fade}
+##### Marker extent
+```{r SFXN1_ext_med.DF_931}
+x <- DF$SFXN1_ext_med
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+##### Marker intensity
+```{r SFXN1_int_med.DF_931}
+x <- factor(DF$SFXN1_int_med)
+g_nice(x)
+tbl_nice(x)
+```
+
+##### Marker H-score
+```{r SFXN1_h_med.DF_931}
+x <- DF$SFXN1_h_med
+g_nice(x, bin = 25)
+tbl_nice(x)
+```
+
+#### By maximum value {.tabset .tabset-pills .tabset-fade}
+##### Marker extent
+```{r SFXN1_ext_max.DF_931}
+x <- DF$SFXN1_ext_max
+g_nice(x, bin = 10)
+tbl_nice(x)
+```
+
+##### Marker intensity
+```{r SFXN1_int_max.DF_931}
+x <- factor(DF$SFXN1_int_max)
+g_nice(x)
+tbl_nice(x)
+```
+
+##### Marker H-score
+```{r SFXN1_h_max.DF_931}
+x <- DF$SFXN1_h_max
+g_nice(x, bin = 25)
+tbl_nice(x)
+```

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SFXN1 in bladder cancer</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Descriptive analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="descriptive_cpo.html">Clinicopathologic features</a>
+    </li>
+    <li>
+      <a href="descriptive_marker.html">Marker expression features</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Association analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="association_ext_med.html">By median extent</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum extent</a>
+    </li>
+    <li>
+      <a href="association_int_med.html">By median intensity</a>
+    </li>
+    <li>
+      <a href="association_ext_max.html">By maximum intensity</a>
+    </li>
+    <li>
+      <a href="association_h_med.html">By median H-score</a>
+    </li>
+    <li>
+      <a href="association_h_max.html">By maximum H-score</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Outcome analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="outcome_regression.html">Regression analysis</a>
+    </li>
+    <li>
+      <a href="outcome_survival.html">Survival curves</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p> </p>
+<div id="regression-modelling" class="section level1 tabset tabset-pills tabset-fade">
+<h1>Regression modelling</h1>
+<div id="tma-674" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 674</h2>
+<div id="tumor-progression" class="section level3">
+<h3>Tumor progression</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">2.8e-01 (0.033, 2.0e+00)</td>
+<td align="center">0.214</td>
+<td align="center">0.40 (0.105, 1.54)</td>
+<td align="center">0.16</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">3.0e-08 ( NA, 3.7e+182)</td>
+<td align="center">0.995</td>
+<td align="center">0.33 (0.067, 1.58)</td>
+<td align="center">0.21</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">1.5e-01 (0.014, 1.1e+00)</td>
+<td align="center">0.078</td>
+<td align="center">0.39 (0.102, 1.48)</td>
+<td align="center">0.14</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="overall-mortality" class="section level3">
+<h3>Overall mortality</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">2.2e+00 (0.18, 5.2e+01)</td>
+<td align="center">0.54</td>
+<td align="center">0.37 (0.131, 1.05)</td>
+<td align="center">0.055</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">1.5e-07 ( NA, 1.8e+182)</td>
+<td align="center">1.00</td>
+<td align="center">0.32 (0.069, 1.46)</td>
+<td align="center">0.194</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">2.2e+00 (0.18, 5.2e+01)</td>
+<td align="center">0.54</td>
+<td align="center">0.86 (0.349, 2.14)</td>
+<td align="center">0.751</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cancer-related-mortality" class="section level3">
+<h3>Cancer-related mortality</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">2.8e-01 (0.033, 2.0e+00)</td>
+<td align="center">0.214</td>
+<td align="center">0.40 (0.105, 1.54)</td>
+<td align="center">0.16</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">3.0e-08 ( NA, 3.7e+182)</td>
+<td align="center">0.995</td>
+<td align="center">0.33 (0.067, 1.58)</td>
+<td align="center">0.21</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">1.5e-01 (0.014, 1.1e+00)</td>
+<td align="center">0.078</td>
+<td align="center">0.39 (0.102, 1.48)</td>
+<td align="center">0.14</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tma-931" class="section level2 tabset tabset-pills tabset-fade">
+<h2>TMA 931</h2>
+<div id="tumor-recurrence" class="section level3">
+<h3>Tumor recurrence</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">0.28 (0.045, 1.44)</td>
+<td align="center">0.143</td>
+<td align="center">0.85 (0.28, 2.56)</td>
+<td align="center">0.77</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">0.60 (0.026, 7.19)</td>
+<td align="center">0.694</td>
+<td align="center">0.71 (0.15, 3.29)</td>
+<td align="center">0.67</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">0.17 (0.020, 0.95)</td>
+<td align="center">0.059</td>
+<td align="center">0.68 (0.22, 2.07)</td>
+<td align="center">0.50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tumor-progression-1" class="section level3">
+<h3>Tumor progression</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">1.7e+00 ( 1.4e-01, 39.03)</td>
+<td align="center">0.69</td>
+<td align="center">1.7e+00 (0.15, 18.28)</td>
+<td align="center">0.67</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">1.8e+07 (1.8e-164, NA)</td>
+<td align="center">1.00</td>
+<td align="center">2.3e+08 (0.00, Inf)</td>
+<td align="center">0.33</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">2.9e-01 ( 1.2e-02, 3.44)</td>
+<td align="center">0.34</td>
+<td align="center">3.3e-01 (0.03, 3.61)</td>
+<td align="center">0.34</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="overall-mortality-1" class="section level3">
+<h3>Overall mortality</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictors</th>
+<th align="center">Odds Ratio (95% CI)</th>
+<th align="center">P value</th>
+<th align="center">Hazard Ratio (95% CI)</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">High SFXN1 extent (&gt; median)</td>
+<td align="center">1.80 (0.278, 15.34)</td>
+<td align="center">0.55</td>
+<td align="center">1.75 (0.318, 9.59)</td>
+<td align="center">0.51</td>
+</tr>
+<tr class="even">
+<td align="left">High SFXN1 intensity (&gt; median)</td>
+<td align="center">0.59 (0.046, 14.20)</td>
+<td align="center">0.69</td>
+<td align="center">0.77 (0.089, 6.57)</td>
+<td align="center">0.81</td>
+</tr>
+<tr class="odd">
+<td align="left">High SFXN1 H-score (&gt; median)</td>
+<td align="center">0.58 (0.085, 3.92)</td>
+<td align="center">0.57</td>
+<td align="center">0.66 (0.132, 3.26)</td>
+<td align="center">0.61</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

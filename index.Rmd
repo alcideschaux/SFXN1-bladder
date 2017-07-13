@@ -1,0 +1,43 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+```
+
+\   
+
+# Project team
+- **Principal Investigators:** George J. Netto, M.D.^1^; Sooryanarayana Varambally, Ph.D.^1^
+- **Data scientist:** Alcides Chaux, M.D.^2^
+
+^1^ Department of Pathology, The University of Alabama at Birmingham, Birmingham, AL: ^2^ Centro para el Desarrollo de la Investigación Científica, Asunción, Paraguay
+
+\   
+
+# Data analysis {.tabset .tabset-pills .tabset-fade}
+Data analysis was carried out using 3 approaches: descriptive analysis, association analysis, and outcome analysis. Data was analyzed and plots were generated using `r R.version.string` from the R Foundation for Statistical Computing (Vienna, Austria). R packages from the [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html) were extensively used.
+
+- **Last updated:** `r date()`
+
+\   
+
+## Descriptive analysis
+The analysis describes the [clinicopathologic, treatment and outcome](descriptive_cpo.html) features corresponding to the `r nrow(DF_674)` patients included in the dataset from TMA 674, and to the `r nrow(DF_931)` patients included in the dataset from TMA 931.
+
+The analysis also descibres the marker features as evaluated in the `r nrow(SFXN1_674)` spots from TMA 674, and the `r nrow(SFXN1_931)` spots from TMA 931, including the extent (i.e., percentage of positive cells), intensity (absent, weak, moderate and strong intensity), and H-score. The H-score was estimated by multipling the extent (0--100%) by the intensity (0 for absent, 1 for weak, 2 for moderate and 3 for strong intensity), ranging from 0 to 300.
+
+We describe marker features using two approaches: first, we describe the marker expression considering [all TMA spots](descriptive_marker.html); then, we summarized marker expression by cases (i.e., patients), using either the median or the maximum value of the considered feature.
+
+Categorical variables were described using frequency tables and barplots. Numerical variables were described using measurements of central tendency and dispersion, histograms, and density plots.
+
+## Association analysis
+For association analyses we included only the invasive cases (i.e., cases in which the TMA spot evaluated showed tumor cells). For each TMA, the marker values were compared considering clinical, preoperative, pathologic, treatment, and outcome features. In this context, marker values were considered as the outcome variables and the aforementioned features as the predictor variables. Variables were described using measurements of central tendency and dispersion, boxplots, and density plots.
+
+For each feature (extent, intensity and H-score), either the median or the maximum value was used for the analysis. Thus, the association analysis was carried out by [median percentage](association_ext_med.html), [maximum percentage](association_ext_max.html), [median intensity](association_int_med.html), [maximum intensity](association_int_max.html), [median H-score](association_h_med.html), and [maximum H-score]((association_h_max.html).
+
+The association was evaluated using either the [Mann-Whitney U test for the sum of ranks](https://en.wikipedia.org/wiki/Mann-Whitney_U_test) or the [Kruskal-Wallis rank sum test](https://en.wikipedia.org/wiki/Kruskal-Wallis_one-way_analysis_of_variance), depending on the features of the predictor variables.
+
+## Outcome analysis (only invasive cases)
+For outcome analyses we included only the invasive cases (i.e., cases in which the TMA spot evaluated showed tumor cells). The outcome analysis included [regression modeling](outcome_regression.html) and [survival analysis](outcome_survival.html). For each feature (extent, intensity and H-score), each case was categorized as showing high or low expression using the median values of the feature grouped in 2 levels, considering the median value of the feature distribution.
+
+Outcome variables included tumor recurrence, tumor progression, overall mortality, and cancer-related mortality.
+
+Odds ratios were estimated using unconditional binary [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression). Hazard ratios were estimated using [Cox's proportional hazards regression](https://en.wikipedia.org/wiki/Proportional_hazards_model). Survival curves were built using the [Kapplan-Meier estimator](https://en.wikipedia.org/wiki/Kaplan-Meier_estimator) and compared using the [log-rank test](https://en.wikipedia.org/wiki/Log-rank_test).

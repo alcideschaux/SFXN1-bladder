@@ -1,0 +1,176 @@
+```{r Global, echo=FALSE, warning=FALSE, message=FALSE}
+source("Global.R")
+DF_674 <- DF_674 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+DF_931 <- DF_931 %>% 
+  filter(dx_spot == "Invasive") %>% 
+  droplevels()
+
+```
+
+\   
+
+# By maximum SFXN1 H-score {.tabset .tabset-pills .tabset-fade}
+## TMA 674 {.tabset .tabset-pills .tabset-fade}
+```{r DF_674}
+DF <- DF_674
+x <- DF$SFXN1_h_max
+```
+
+### Clinical features {.tabset .tabset-pills .tabset-fade}
+#### Age
+```{r age_group.DF_674}
+y <- DF$age_group
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Sex
+```{r sex.DF_674}
+y <- DF$sex
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Race
+```{r race.DF_674}
+y <- DF$race
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+### Pathologic features {.tabset .tabset-pills .tabset-fade}
+#### Pathologic stage
+```{r stage_pt.DF_674}
+y <- DF$stage_pt
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Clinical stage
+```{r stage_clinical.DF_674}
+y <- DF$stage_clinical
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Adjacent CIS
+```{r CIS.DF_674}
+y <- DF$CIS
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Lymphovascular invasion
+```{r lvi.DF_674}
+y <- DF$lvi
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Lymph node metastasis
+```{r metastasis_lymph.DF_674}
+y <- DF$metastasis_lymph
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+### Outcome features {.tabset .tabset-pills .tabset-fade}
+#### Tumor progression
+```{r progression.DF_674}
+y <- DF$progression
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Visceral metastasis
+```{r metastasis_visceral.DF_674}
+y <- DF$metastasis_visceral
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Overall mortality
+```{r dead.DF_674}
+y <- DF$dead
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Cancer-related mortality
+```{r dod.DF_674}
+y <- DF$dod
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+## TMA 931 {.tabset .tabset-pills .tabset-fade}
+```{r DF_931}
+DF <- DF_931
+x <- DF$SFXN1_h_max
+```
+
+### Clinical features {.tabset .tabset-pills .tabset-fade}
+#### Age
+```{r age_group.DF_931}
+y <- DF$age_group
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Sex
+```{r sex.DF_931}
+y <- DF$sex
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+### Pathologic features {.tabset .tabset-pills .tabset-fade}
+#### Pathologic stage
+```{r stage_pt.DF_931}
+y <- DF$stage_pt
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+### Outcome features {.tabset .tabset-pills .tabset-fade}
+#### Tumor recurrence
+```{r recurrence.DF_931}
+y <- DF$recurrence
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Tumor progression
+```{r progression.DF_931}
+y <- DF$progression
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
+
+#### Overall mortality
+```{r dead.DF_931}
+y <- DF$dead
+g2_nice(x, y)
+tbl_nice(x, y)
+tbl_test(x, y)
+```
